@@ -8,4 +8,4 @@ const getallOrder=async(req,res)=>{
         return res.status(500).json({status:500,message:"Server error",error:error.message})
     }
 }
-export default getallOrder;m
+export default getallOrder;
