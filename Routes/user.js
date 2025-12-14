@@ -2,6 +2,7 @@ import express from 'express'
 import getImages from '../Controller/Getimage.js'
 import Images from '../MODELS/index.js'
 import deleteImage from '../Controller/Deleteimage.js'
+import getallOrder from '../Controller/Getorder.js'
 import createorder from '../Controller/Createorder.js'
 import { configDotenv } from 'dotenv'
 import cloudinary from 'cloudinary'
@@ -11,8 +12,9 @@ import multer from 'multer'
 configDotenv()
 const router = express.Router()
 router.get('/login',Login)
-router.post('/sentorder',createorder)
+router.get('/getallorder',getallOrder)
 router.get('/getimage',getImages)
+router.post('/sentorder',createorder)
 router.delete('/image/:id',deleteImage)
 cloudinary.v2.config({
   cloud_name: process.env.cloud_name,
